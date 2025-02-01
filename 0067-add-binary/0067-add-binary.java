@@ -1,20 +1,25 @@
 class Solution {
     public String addBinary(String a, String b) {
-        StringBuilder sb=new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         
-        int i=a.length()-1;
-        int j=b.length()-1;
-        int carry=0;
-        while(i>=0||j>=0){
-            int sum=carry;
-            if(i>=0) sum+=a.CharAt(i)-'0';
-            if(j>=0) sum+=b.CharAt(i)-'0';
-            sb.append(sum%2);
-            carry=sum/2;
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+        
+        while (i >= 0 || j >= 0) {
+            int sum = carry;
+            if (i >= 0) sum += a.charAt(i) - '0'; // Fix: Use charAt (lowercase 'c')
+            if (j >= 0) sum += b.charAt(j) - '0'; // Fix: Use j instead of i
+            
+            sb.append(sum % 2);
+            carry = sum / 2;
+            
             i--;
             j--;
         }
-        if(carry!=0) sb.append(carry);
+        
+        if (carry != 0) sb.append(carry);
+        
         return sb.reverse().toString();
     }
 }
