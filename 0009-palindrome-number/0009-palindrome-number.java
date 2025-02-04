@@ -13,7 +13,7 @@ class Solution {
             x/=10;
             r=(r*10)+sum;
         }
-        if(x==r){
+        if(x==r || x==r/10){
             return true;
         }
         else{
