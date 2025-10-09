@@ -5,7 +5,7 @@ class Solution {
         while (x != 0) {
             int digit = x % 10;
             
-            // Check for overflow before updating rev
+     
             if (rev > Integer.MAX_VALUE / 10 || rev < Integer.MIN_VALUE / 10) {
                 return 0;
             }
